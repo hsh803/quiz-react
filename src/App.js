@@ -10,9 +10,9 @@ import List from './components/List';
 function App() {
   const [Quiz, setQuiz] =  useState([])
 
-  const quizList = (CreateQuiz) => {
-    CreateQuiz.id = Math.random()
-    const newQuiz = [...Quiz, CreateQuiz]
+  const quizList = (createQuiz) => {
+    createQuiz.id = Math.random()
+    const newQuiz = [...Quiz, createQuiz]
     setQuiz(newQuiz)
   }
 
@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route path="/create" component={() => <Create submit={quizList} />} />
+      <Route exact path="/create" component={() => <Create submit={quizList} />} />
       <Route exact path="/list" component={() => <List list={Quiz} />} />
     </BrowserRouter>
   )

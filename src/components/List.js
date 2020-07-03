@@ -7,7 +7,7 @@ function List(props) {
     const quizList = props.list.map(element => 
        <div key={element.id}><Link to={`/list/${element.name}`}>{element.name}</Link></div>
     )
-
+        console.log(quizList)
     return (
     <div>{quizList}</div>
     )

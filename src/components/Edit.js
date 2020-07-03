@@ -1,15 +1,31 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useState} from 'react';
 
 function Edit(props) {
-    if ()
-    const quizList = props.list.map(element => 
-       <div key={element.id}><Link to={`/list/${element.name}`}>{element.name}</Link></div>
-    )
+    const [quizContent, setquizContent] = useState(["", ""])
+
+    const editContent = props.quiz.map(element => 
+        <div key={element.id}>
+            <div>Q:</div>
+            <input type="text" defaultValue={`${element[0]}`} onChange={(e) => setquizContent([e.target.value, ""])} />
+            <div>A:</div>
+            <input type="text" defaultValue={`${element[1]}`} onChange={(e) => setquizContent([quizContent[0], e.target.value])} />
+        </div>
+        )
+        console.log(quizContent)
+    
+    const editContentSubmit = (e) => {
+        props.editSubmit(quizContent)
+        props.step()
+    }
 
     return (
-    <div>{quizList}</div>
-    )
+        <div>
+            <div>Quiz: {props.name}</div>
+            <form onSubmit={editContentSubmit}>
+            {editContent}
+            <input type="submit" value="Save" />
+            </form>
+        </div>    )
     
 }
 

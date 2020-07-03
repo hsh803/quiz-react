@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import Content from './Content';
-// import { withRouter } from 'react-router-dom';
+import Add from './Add';
+import Show from './Show';
+import Edit from './Edit';
+import { withRouter } from 'react-router-dom';
 
 function Create(props) {
     const [quiz, setquiz] = useState({name: "", content: []})
@@ -9,7 +11,7 @@ function Create(props) {
     const nextStep = (e) => {
         e.preventDefault()
         setquiz({name: quiz.name, content: []})
-        setStep(step + 1)
+        setStep(2)
     }
     console.log(quiz)
 
@@ -22,14 +24,15 @@ function Create(props) {
     }
 
     const editQuiz = (editContent) => {
+        editContent.id = Math.random()
         const newQuiz = {name: quiz.name, content: [editContent]}
         setquiz(newQuiz)
     }
 
-    // const submitQuiz = (e) => {
-    //     props.submit(quiz)
-    //     props.history.push("/list")
-    // }
+    const submitQuiz = () => {
+        props.submit(quiz)
+        props.history.push("/list")
+    }
 
     switch(step) {
         case 1:
@@ -41,22 +44,21 @@ function Create(props) {
                 </div>
             );
         case 2: 
-        return( 
-            <Content name={quiz.name} quiz={quiz.content} submit={updateQuiz} editSubmit={editQuiz} />
-        );
-        // case 3:
-        //     const editQuiz =(id) => {
-        //         const editContent = quiz.content.map(element => {
-        //             element.id === id ? <div>element[0]</div> : null
-        //         }
-        //         )
-        //     }
-        // return( 
-        //     <Edit pass={editContent} />
-        // );
+            return(     
+                <Add name={quiz.name} submit={updateQuiz} step={() => setStep(3)} />
+                // <Content name={quiz.name} quiz={quiz.content} submit={updateQuiz} editSubmit={editQuiz} />
+            );
+        case 3: 
+            return( 
+                <Show name={quiz.name} quiz={quiz.content} submit={submitQuiz} step={() => setStep(4)} />
+            );
+        case 4: 
+            return( 
+                <Edit name={quiz.name} quiz={quiz.content} editSubmit={editQuiz} step={() => setStep(3)} />
+            );
         default: (console.log("This is build by switch statement"))
     }
 
 }
 
-export default Create;
+export default withRouter(Create);
