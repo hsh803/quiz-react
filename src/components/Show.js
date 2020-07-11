@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 function Show(props) {
     const list = props.quiz.map(element => 
-        <div key={element.id}>
+        <div key={element.id} className="list">
             <div>Q: {element[0]}</div>
             <div>A: {element[1]}</div>
         </div>
@@ -11,11 +11,12 @@ function Show(props) {
         console.log(list)
 
     return (
-        <div>
-            <div>Quiz: {props.name}</div>
+        <div className="quiz">
+            <div className="title">Quiz: {props.name}</div>
+            <div className="title">Number of the quiz: {props.quiz.length}</div>
             <div>{list}</div>
-            <input type="submit" value="Edit" onClick={props.step} />
-            <input type="button" value="Finish" onClick={props.submit} />        
+            <button type="submit" onClick={props.step}>Edit</button>
+            <button type="button" onClick={props.submit}>Finish</button>        
         </div>   
     )
     

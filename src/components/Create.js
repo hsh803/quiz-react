@@ -37,16 +37,15 @@ function Create(props) {
     switch(step) {
         case 1:
             return (
-                <div>
-                <div>Quiz name</div>
+                <div className="quiz" >
+                <div className="title">Quiz name</div>
                 <input type="text" value={quiz.name} onChange={(e) => setquiz({name: e.target.value, content: []})}/>
-                <input type="submit" value="Next" onClick={nextStep} />
+                <button type="submit" onClick={nextStep}>Next</button>
                 </div>
             );
         case 2: 
             return(     
                 <Add name={quiz.name} submit={updateQuiz} step={() => setStep(3)} />
-                // <Content name={quiz.name} quiz={quiz.content} submit={updateQuiz} editSubmit={editQuiz} />
             );
         case 3: 
             return( 

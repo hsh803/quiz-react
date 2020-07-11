@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 
 function Home() {
     return(
-        <Link to="/create">Create Quiz</Link>
+        <div className="create-button"><Link to="/create">Create Quiz</Link>
+        </div>
     )
 }
 

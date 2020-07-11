@@ -1,13 +1,19 @@
 import React from 'react';
+import {slide as Menu} from 'react-burger-menu';
 import {Link} from 'react-router-dom';
 
 function Navbar() {
     return(
-        <nav>
-            <Link to="/create">Create quiz</Link>
+        <Menu right>
+            <Link to="/create">Create Quiz</Link>
             <Link to="/list">Quiz list</Link>
-        </nav>
+        </Menu>
     )
 }
 
+// burger menu
+// https://codesandbox.io/s/nmy6x9wrj?file=/src/styles.css
+// https://codepen.io/Lakston/pen/ALvgKB
+// https://negomi.github.io/react-burger-menu/
+// https://github.com/negomi/react-burger-menu
 export default Navbar;
