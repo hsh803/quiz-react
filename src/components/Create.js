@@ -24,8 +24,7 @@ function Create(props) {
     }
 
     const editQuiz = (editContent) => {
-        editContent.id = Math.random()
-        const newQuiz = {name: quiz.name, content: [editContent]}
+        const newQuiz = {name: quiz.name, content: [...quiz.content, editContent]}
         setquiz(newQuiz)
     }
 
