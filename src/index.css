@@ -127,11 +127,11 @@ a {
 }
 
 .quiz input,
-.quiz textarea{
+.quiz textarea {
   width: 250px;
   border: solid 2px #58DFC6;
-  border-radius: 18px;
-  padding: 5px;
+  border-radius: 10px;
+  padding: 8px 10px;
   overflow: hidden;
   resize: none;
 }
@@ -140,13 +140,17 @@ a {
   padding: 7px 10px;
   background-color: #696969;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   border-style: none;
   margin: 15px 4px;
   cursor: pointer;
 }
 
 button:hover {
+  border: solid 2px #58DFC6;
+}
+
+button:focus {
   border: solid 2px #58DFC6;
 }
 
@@ -164,7 +168,7 @@ button:hover {
 
 .list-name {
   border: solid 1.5px #58DFC6;
-  border-radius: 15px;
+  border-radius: 13px;
   padding: 15px;
   margin: 15px;
   display: inline-block;
@@ -188,9 +192,4 @@ button:hover {
   width: auto;
   height: auto;
   top: 90px;
-}
-
-.bm-cross-button {
-  right: 2px;
-  top: 2px;
 }
