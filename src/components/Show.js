@@ -15,7 +15,7 @@ function Show(props) {
             <div className="title">Quiz: {props.name}</div>
             <div className="title">Number of the quiz: {props.quiz.length}</div>
             <div>{list}</div>
-            <button type="submit" onClick={props.step}>Edit</button>
+            <button type="button" onClick={props.step}>Edit</button>
             <button type="button" onClick={props.submit}>Finish</button>        
         </div>   
     )

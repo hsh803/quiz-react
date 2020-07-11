@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import TextareaAutosize from 'react-autosize-textarea';
 
 function Add(props) {
     const [quizContent, setquizContent] = useState(["", ""])
@@ -21,9 +22,9 @@ function Add(props) {
         <div className="title">Quiz: {props.name}</div>
         <div className="title">Number of the quiz: {count}</div>
         <div className="under-title">Question:</div>
-        <input type="text" value={quizContent[0]} onChange={(e) => setquizContent([e.target.value, ""])} />
+        <TextareaAutosize value={quizContent[0]} onChange={(e) => setquizContent([e.target.value, ""])} />
         <div className="under-title">Answer:</div>
-        <input type="text" value={quizContent[1]} onChange={(e) => setquizContent([quizContent[0], e.target.value])} />
+        <TextareaAutosize value={quizContent[1]} onChange={(e) => setquizContent([quizContent[0], e.target.value])} />
         <div>
         <button type="submit" onClick={countNumber}>Add</button>
         <button type="button" onClick={props.step}>Next</button>

@@ -40,7 +40,7 @@ function Create(props) {
                 <div className="quiz" >
                 <div className="title">Quiz name</div>
                 <input type="text" value={quiz.name} onChange={(e) => setquiz({name: e.target.value, content: []})}/>
-                <button type="submit" onClick={nextStep}>Next</button>
+                <button type="button" onClick={nextStep}>Next</button>
                 </div>
             );
         case 2: 
