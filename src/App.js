@@ -29,12 +29,19 @@ function App() {
   console.log(QuizContent)
   console.log(Quiz)
 
+  const deleteQuiz = (id) => {
+    const newQuizList = Quiz.filter(element => 
+      element.id !== id
+      )
+      setQuiz(newQuizList)
+  } 
+
   return (
     <BrowserRouter>
       <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/create" component={() => <Create submit={quizList} />} />
-      <Route exact path="/list" component={() => <List list={Quiz} quiz={quizContent} />} />
+      <Route exact path="/list" component={() => <List list={Quiz} quiz={quizContent} delete={deleteQuiz} />} />
       <Route exact path="/list/quiz" component={() => <Content name={QuizContent.name} content={QuizContent.content} />} />
     </BrowserRouter>
   )

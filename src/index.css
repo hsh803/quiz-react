@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 .bm-item {
   display: inline-block;
 
@@ -92,7 +96,6 @@ code {
 }
 
 .create-button a {
-  text-decoration: none;
   color:#58DFC6; /* #96DBC4*/
 }
 
@@ -123,16 +126,18 @@ code {
   padding: 10px;
 }
 
-.quiz input {
+.quiz input,
+.quiz textarea{
   width: 250px;
   border: solid 2px #58DFC6;
   border-radius: 18px;
   padding: 5px;
+  overflow: hidden;
+  resize: none;
 }
 
 .quiz button {
-  width: 50px;
-  height: 25px;
+  padding: 7px 10px;
   background-color: #696969;
   color: #fff;
   border-radius: 15px;
@@ -149,11 +154,15 @@ button:hover {
 .list div {
   padding-left: 10px;
   padding-bottom: 10px;
+  overflow-wrap: break-word;
 }
 
-.list-box {
-  width: 100px;
-  margin: 0 auto;
+.list-container {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.list-name {
   border: solid 1.5px #58DFC6;
   border-radius: 15px;
   padding: 15px;
@@ -163,7 +172,25 @@ button:hover {
   font-size: 20px;
 }
 
-.list-box a {
-  text-decoration: none;
-  color: #373a47;
+.list-button {
+  display: inline-block;
+}
+
+.list-button a {
+  color: #fff;
+}
+
+.bm-menu {
+  padding: 30px 25px 15px;
+}
+
+.bm-menu-wrap {
+  width: auto;
+  height: auto;
+  top: 90px;
+}
+
+.bm-cross-button {
+  right: 2px;
+  top: 2px;
 }
