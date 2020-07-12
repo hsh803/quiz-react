@@ -16,15 +16,16 @@ function Content(props) {
         else {
             setPoint(point + 1)
             setStep(2)}
-
     }
 
     const loseStep = () => {
-        if (count < props.content.length) {
+        if (count < props.content.length - 1) {
             setCount(count + 1)
+            setPoint(point + 0)
             setShowHide(!showHide)
         }
         else {
+            setPoint(point + 0)
             setStep(2)}
     }
 
@@ -38,21 +39,23 @@ function Content(props) {
     switch(step) {
     case 1:
         return (
-            <div>
-            <div>{props.name}</div>
-            <div>{count} of {props.content.length}</div>
-            <div>{point}</div>
+            <div className="quiz">
+            <div className="title">Quiz: {props.name}</div>
+                <div className="under-title">
+                    <div>{count} of {props.content.length}</div>
+                    <div>{point}</div>
+                </div>
 
-                <div key={props.content[count].id}>
-                    <div>Question</div>
+                <div className="q-a" key={props.content[count].id}>
+                    <div>Question:</div>
                     <div>{props.content[count][0]}</div>
-                    <input style={showHide ? hideButton : null} type="button" value="Answer" onClick={() => setShowHide(!showHide)} />
+                    <button style={showHide ? hideButton : null} type="button" onClick={() => setShowHide(!showHide)}>Answer</button>
                     
                     <div style={showHide ? showButton : {display: "none"}}>
-                    <div>Answer</div>
+                    <div>Answer:</div>
                     <div>{props.content[count][1]}</div>                 
-                    <input type="button" value="O" onClick={winStep}/>
-                    <input type="button" value="X" onClick={loseStep}/>
+                    <button type="button" onClick={winStep}>O</button>
+                    <button type="button" onClick={loseStep}>X</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +63,7 @@ function Content(props) {
 
     case 2:
         return(
-            <div>You have got {point} points!</div>
+            <h3 className="quiz" style={{textAlign: "center"}}>You have got {point} points!</h3>
         )
     
     default: (console.log("This is build by switch statement"))

@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom';
 function Create(props) {
     const [quiz, setquiz] = useState({name: "", content: []})
     const [step, setStep] = useState(1)
-    
+    // const [eidtQuiz, seteditQuiz] = useState([])
+
     const nextStep = (e) => {
         e.preventDefault()
         setquiz({name: quiz.name, content: []})
@@ -24,7 +25,11 @@ function Create(props) {
     }
 
     const editQuiz = (editContent) => {
-        const newQuiz = {name: quiz.name, content: [...quiz.content, editContent]}
+        console.log(editContent)
+        // const x = [...quiz.content].filter(element =>
+        //     element.id !== editContent[2]
+        //     )
+        const newQuiz = {name: quiz.name, content: [editContent]}
         setquiz(newQuiz)
     }
 
@@ -38,7 +43,7 @@ function Create(props) {
             return (
                 <div className="quiz" >
                 <div className="title">Quiz name</div>
-                <input type="text" value={quiz.name} onChange={(e) => setquiz({name: e.target.value, content: []})}/>
+                <input type="text" value={quiz.name} onChange={(e) => setquiz({name: e.target.value, content: []})} autoFocus/>
                 <button type="button" onClick={nextStep}>Next</button>
                 </div>
             );
