@@ -146,10 +146,7 @@ a {
   cursor: pointer;
 }
 
-button:hover {
-  border: solid 2px #58DFC6;
-}
-
+button:hover,
 button:focus {
   border: solid 2px #58DFC6;
 }
@@ -192,4 +189,9 @@ button:focus {
   width: auto;
   height: auto;
   top: 90px;
+}
+
+.q-a {
+  padding: 10px;
+  line-height: 30px;
 }
