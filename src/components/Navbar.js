@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 function Navbar() {
     return(
         <Menu right>
-            <Link to="/create">Create Quiz</Link>
-            <Link to="/list">Quiz list</Link>
+            <Link to="/quiz-react/create">Create Quiz</Link>
+            <Link to="/quiz-react/list">Quiz list</Link>
         </Menu>
     )
 }

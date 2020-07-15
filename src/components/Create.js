@@ -59,7 +59,7 @@ function Create(props) {
     
     const submitQuiz = () => {
         props.submit(quiz)
-        props.history.push("/list")
+        props.history.push("/quiz-react/list")
     }
 
     switch(step) {
