@@ -39,10 +39,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/create" component={() => <Create submit={quizList} />} />
-      <Route exact path="/list" component={() => <List list={Quiz} quiz={quizContent} delete={deleteQuiz} />} />
-      <Route exact path="/list/quiz" component={() => <Content name={QuizContent.name} content={QuizContent.content} />} />
+      <Route exact path="/quiz-react" component={Home} />
+      <Route exact path="/quiz-react/create" component={() => <Create submit={quizList} />} />
+      <Route exact path="/quiz-react/list" component={() => <List list={Quiz} quiz={quizContent} delete={deleteQuiz} />} />
+      <Route exact path="/quiz-react/list/quiz" component={() => <Content name={QuizContent.name} content={QuizContent.content} />} />
     </BrowserRouter>
   )
   
