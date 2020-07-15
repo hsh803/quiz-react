@@ -107,7 +107,7 @@ a {
 }
 
 .quiz {
-  width: 350px;
+  width: 380px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -117,18 +117,20 @@ a {
 
 .title {
   font-size: 20px;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-bottom: 15px;
 }
 
 .under-title {
   font-size: 17px;
-  padding: 10px;
+  padding: 10px 0 10px 15px;
 }
 
 .quiz input,
 .quiz textarea {
   width: 250px;
+  font-size: 17px;
+  margin-left: 15px;
   border: solid 2px #58DFC6;
   border-radius: 10px;
   padding: 8px 10px;
@@ -136,14 +138,19 @@ a {
   resize: none;
 }
 
-.quiz button {
+button {
   padding: 7px 10px;
   background-color: #696969;
   color: #fff;
   border-radius: 10px;
   border-style: none;
-  margin: 15px 4px;
   cursor: pointer;
+  margin: 6px;
+}
+
+.btn {
+  padding-top: 15px;
+  padding-left: 15px;
 }
 
 button:hover,
@@ -192,11 +199,19 @@ button:focus {
 }
 
 .q-a {
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
   line-height: 30px;
 }
 
 .list textarea {
-  background-color: #FB8D65;
+  background-color: #fff;
   border: 0;
+}
+
+.box {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
 }
