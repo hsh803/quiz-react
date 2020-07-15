@@ -63,7 +63,7 @@ function Content(props) {
 
     case 2:
         return(
-            <h3 className="quiz" style={{textAlign: "center"}}>You have got {point} points!</h3>
+            <h3 className="quiz" style={{textAlign: "center"}}>You have won {point} points!</h3>
         )
     
     default: (console.log("This is build by switch statement"))

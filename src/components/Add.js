@@ -22,7 +22,7 @@ function Add(props) {
         <div className="title">Quiz: {props.name}</div>
         <div className="title">Number of the quiz: {count}</div>
         <div className="under-title">Question:</div>
-        <TextareaAutosize value={quizContent[0]} onChange={(e) => setquizContent([e.target.value, ""])} autoFocus />
+        <TextareaAutosize value={quizContent[0]} onChange={(e) => setquizContent([e.target.value, quizContent[1]])} autoFocus />
         <div className="under-title">Answer:</div>
         <TextareaAutosize value={quizContent[1]} onChange={(e) => setquizContent([quizContent[0], e.target.value])} />
         <div>
