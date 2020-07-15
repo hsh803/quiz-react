@@ -195,3 +195,8 @@ button:focus {
   padding: 10px;
   line-height: 30px;
 }
+
+.list textarea {
+  background-color: #FB8D65;
+  border: 0;
+}
