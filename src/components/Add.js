@@ -19,16 +19,17 @@ function Add(props) {
 
     return (
     <form className="quiz" onSubmit={contentSubmit}>
-        <div className="title">Quiz: {props.name}</div>
-        <div className="title">Number of the quiz: {count}</div>
-        <div className="under-title">Question:</div>
-        <TextareaAutosize value={quizContent[0]} onChange={(e) => setquizContent([e.target.value, quizContent[1]])} autoFocus />
-        <div className="under-title">Answer:</div>
-        <TextareaAutosize value={quizContent[1]} onChange={(e) => setquizContent([quizContent[0], e.target.value])} />
-        <div>
-        <button type="submit" onClick={countNumber}>Add</button>
-        <button type="button" onClick={props.step}>Next</button>
-        </div>        
+        <div className="title">{props.name} [{count}]</div>
+            <div className="under-title">Question</div>
+            <TextareaAutosize value={quizContent[0]} onChange={(e) => setquizContent([e.target.value, quizContent[1]])} autoFocus />
+
+            <div className="under-title">Answer</div>
+            <TextareaAutosize value={quizContent[1]} onChange={(e) => setquizContent([quizContent[0], e.target.value])} />
+
+            <div className="btn">
+                <button type="submit" onClick={countNumber}>Add</button>
+                <button type="button" onClick={props.step}>Next</button>
+            </div>        
     </form>    
     )
     

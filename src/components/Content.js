@@ -40,30 +40,33 @@ function Content(props) {
     case 1:
         return (
             <div className="quiz">
-            <div className="title">Quiz: {props.name}</div>
-                <div className="under-title">
-                    <div>{count} of {props.content.length}</div>
-                    <div>{point}</div>
-                </div>
+            <div className="title">{props.name} [{count} of {props.content.length}]</div>
+                <div className="under-title">Point: {point}</div>
 
                 <div className="q-a" key={props.content[count].id}>
-                    <div>Question:</div>
-                    <div>{props.content[count][0]}</div>
-                    <button style={showHide ? hideButton : null} type="button" onClick={() => setShowHide(!showHide)}>Answer</button>
-                    
-                    <div style={showHide ? showButton : {display: "none"}}>
-                    <div>Answer:</div>
-                    <div>{props.content[count][1]}</div>                 
+                    <div>Question</div>
+                    <div className="box">{props.content[count][0]}</div>
+                </div>
+
+                <div className="btn">
+                <button style={showHide ? hideButton : null} type="button" onClick={() => setShowHide(!showHide)}>Answer</button>
+                </div>
+
+                <div className="q-a" style={showHide ? showButton : {display: "none"}}>
+                    <div>Answer</div>
+                    <div className="box">{props.content[count][1]}</div>
+                </div>
+
+                <div className="btn">              
                     <button type="button" onClick={winStep}>O</button>
                     <button type="button" onClick={loseStep}>X</button>
-                    </div>
                 </div>
             </div>
             )
 
     case 2:
         return(
-            <h3 className="quiz" style={{textAlign: "center"}}>You have won {point} points!</h3>
+            <h3 className="quiz" style={{textAlign: "center"}}>You won {point} points!</h3>
         )
     
     default: (console.log("This is build by switch statement"))

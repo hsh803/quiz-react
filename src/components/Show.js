@@ -15,9 +15,9 @@ function Show(props) {
     
     const list = props.quiz.map(element => 
         <form key={element.id} className="list">
-            <div className="under-title">Question:</div>
+            <div className="under-title">Question</div>
             <TextareaAutosize style={btn.boolean ? edit : null} value={element[0]} onChange={(e) => props.editQuestion(e.target.value, element.id)} />
-            <div className="under-title">Answer:</div>
+            <div className="under-title">Answer</div>
             <TextareaAutosize style={btn.boolean ? edit : null} value={element[1]} onChange={(e) => props.editAnswer(e.target.value, element.id)} />
         </form>
         )
@@ -25,11 +25,12 @@ function Show(props) {
 
     return (
         <div className="quiz">
-            <div className="title">Quiz: {props.name}</div>
-            <div className="title">Number of the quiz: {props.quiz.length}</div>
+            <div className="title">{props.name} [{props.quiz.length}]</div>
             <div>{list}</div>
+            <div className="btn">
             <button type="button" onClick={() => btnHandler(btn.text)}>{btn.text}</button>
-            <button type="button" onClick={props.submit}>Finish</button>        
+            <button type="button" onClick={props.submit}>Finish</button>
+            </div>     
         </div>   
     )
     
