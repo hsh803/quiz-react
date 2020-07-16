@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -45,7 +44,6 @@ function App() {
       <Route exact path="/quiz-react/list/quiz" component={() => <Content name={QuizContent.name} content={QuizContent.content} />} />
     </BrowserRouter>
   )
-  
 }
 
 export default App;

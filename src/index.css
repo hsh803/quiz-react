@@ -165,11 +165,6 @@ button:focus {
   overflow-wrap: break-word;
 }
 
-.list-container {
-  display: block;
-  padding-bottom: 10px;
-}
-
 .list-name {
   border: solid 1.5px #58DFC6;
   border-radius: 13px;
@@ -204,7 +199,7 @@ button:focus {
   line-height: 30px;
 }
 
-.list textarea {
+.show textarea {
   background-color: #fff;
   border: 0;
 }
