@@ -14,12 +14,13 @@ function Show(props) {
     }
     
     const list = props.quiz.map(element => 
-        <form key={element.id} className="list">
+        <div key={element.id} className="show">
             <div className="under-title">Question</div>
             <TextareaAutosize style={btn.boolean ? edit : null} value={element[0]} onChange={(e) => props.editQuestion(e.target.value, element.id)} />
+
             <div className="under-title">Answer</div>
             <TextareaAutosize style={btn.boolean ? edit : null} value={element[1]} onChange={(e) => props.editAnswer(e.target.value, element.id)} />
-        </form>
+        </div>
         )
         console.log(list)
 

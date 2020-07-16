@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 import Add from './Add';
 import Show from './Show';
-import Edit from './Edit';
 import { withRouter } from 'react-router-dom';
 
 function Create(props) {
     const [quiz, setquiz] = useState({name: "", content: []})
     const [step, setStep] = useState(1)
-    // const [editquiz, seteditquiz] = useState([])
 
     const nextStep = (e) => {
         e.preventDefault()
@@ -25,14 +23,11 @@ function Create(props) {
     }
 
     const editQ = (content, id) => {
-        // let i;
         console.log(content)
         const newQuiz = [...quiz.content].map(element => {
-            // for (i=0; i < element.length; i++){
             if(element.id === id) {
                 element[0] = content
             }
-        // }
         return element
         })
         console.log(newQuiz)
@@ -41,14 +36,11 @@ function Create(props) {
     console.log(quiz)
 
     const editA = (content, id) => {
-        // let i;
         console.log(content)
         const newQuiz = [...quiz.content].map(element => {
-            // for (i=0; i < element.length; i++){
             if(element.id === id) {
                 element[1] = content
             }
-        // }
         return element
         })
         console.log(newQuiz)
@@ -78,10 +70,6 @@ function Create(props) {
         case 3: 
             return( 
                 <Show name={quiz.name} quiz={quiz.content} submit={submitQuiz} editQuestion={editQ} editAnswer={editA} />
-            );
-        case 4: 
-            return( 
-                <Edit name={quiz.name} quiz={quiz.content} step={() => setStep(3)} />
             );
         default: (console.log("This is build by switch statement"))
     }

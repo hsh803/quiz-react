@@ -11,9 +11,4 @@ function Navbar() {
     )
 }
 
-// burger menu
-// https://codesandbox.io/s/nmy6x9wrj?file=/src/styles.css
-// https://codepen.io/Lakston/pen/ALvgKB
-// https://negomi.github.io/react-burger-menu/
-// https://github.com/negomi/react-burger-menu
 export default Navbar;

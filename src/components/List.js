@@ -15,9 +15,8 @@ function List(props) {
      )
          console.log(quizList)
      return (
-     <div className="quiz">{quizList}</div>
+         quizList.length === 0 ?  <h3 className="quiz" style={{textAlign: "center"}}>Empty List</h3> : <div className="quiz">{quizList}</div>
      )
-
 }
 
 export default List;
